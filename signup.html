@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/Signup.css">
+</head>
+
+<body>
+    <div class="main">
+        <img src="/Image/bgfinal.png" class="background" alt="">
+
+        <form action="index.html" class="form">
+            <h1>Register</h1>
+            <input type="text" name="Name" class="box" placeholder="Enter Your Name" required>
+            <input type="email" name="email" class="box" placeholder="Enter Your E-mail" required>
+            <input type="password" name="password" class="box" placeholder="Password" required>
+            <input type="submit" value="Sign Up" id="submit" onclick="save()">
+            <label id="login">Already have an account <a href="/login.html"id="login-button" >Login</a></label>
+        </form>
+    </div>
+</body>
+
+<script>
+
+const save=()=>{
+    alert("signup");
+}
+
+</script>
+
+
+</html>

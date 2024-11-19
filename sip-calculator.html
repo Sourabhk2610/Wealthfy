@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Calculator</title>
+    <link rel="stylesheet" href="calculator-page.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div id="header">
+            <img src="/Image/Wealthfy-icon-typo-web-final-logo.png" alt="" id="logo">
+            <nav id="nav-bar">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="">Blog</a>
+                <a href="">Contact Us</a>
+            </nav>
+            <!-- <a href="#" class="Get-Started">Get Started</a> -->
+        </div>
+    </header>
+
+    <main>
+
+        <div class="headline">
+            <h1>SIP Calculator</h1>
+        </div>
+
+        <div class="front">
+            <div class="text">
+                <p>
+                    Wish to invest periodically? Calculate the amount of wealth that you can generate using our SIP Calculator.
+                    <hr>
+                </p>
+
+               
+                <div id="form">
+                <form action="#">
+                    
+                    <div class="input">
+                    <label for="amount">Monthly Investment Amount</label>
+                    <input type="number" id="amount" placeholder="Ex:10000" min="1" required>
+                </div>
+                <div class="input">
+                    <label for="return">Expected rate of return (P.A)</label>
+                    <input type="number" id="return" placeholder="Ex:12" min="1" required>
+                </div>
+                <div class="input">
+                    <label for="time">Tenure (in years) <span>(Up to 50 years)</span></label>
+                    <input type="number" id="time" placeholder="Ex:10" min="1" max="50" maxlength="50" required>
+                </div>
+                    <input type="submit" value="Plan My Future Value" id="submit">
+                </form>
+            </div>
+            <hr>
+            </div>
+
+           
+            <div class="img">
+                <img src="/Image/cal2.png" alt="">
+            </div>
+        </div>
+
+        <div id="result">
+            <div id="values"></div>
+            <canvas id="futureValueChart" width="500px" height="250px"></canvas>
+        </div>
+
+        <div class="bottom">
+            <h1>About SIP Calculator</h1>
+            <div class="questions">
+                <h3>What is SIP?</h3>
+                <h6>SIP, or Systematic Investment Plan, is a disciplined investment approach where a fixed sum is invested at regular intervals—whether yearly, quarterly, or monthly. To start a SIP, you need to determine the investment amount, select the SIP date, and choose the investment scheme.</h6>
+            </div>
+            <div class="questions">
+                <h3>What are the benefits of SIP?</h3>
+                <h6>With SIP, you invest without trying to predict market conditions, avoiding the need to time the market. This strategy involves investing consistently across various market cycles, leveraging the rupee-cost averaging factor. By staying invested over the long term, your money has the opportunity to benefit from compounding returns. SIPs also offer flexibility, allowing you to start with small investments, such as Rs 500 per month, making it easier to commit without straining your finances.</h6>
+            </div>
+            <div class="questions">
+                <h3> How does our SIP calculator work?</h3>
+                <h6> <pre>The SIP Calculator, also known as the SIP Investment Calculator, requires certain inputs to provide results. These inputs include:
+<b>Investment Type:</b> Choose between monthly or yearly SIP contributions.
+<b>Investment Amount:</b> Enter the regular SIP amount you plan to invest.
+<b>Expected Rate of Return:</b> Input the anticipated annual rate of return for the investment period, typically based on the fund's historical performance.
+<b>Tenure:</b> Specify the duration, in years, for which you intend to continue the investment.</pre></h6>
+            </div>
+            <div class="questions">
+                <h3>Can I miss the payment of SIP?</h3>
+                <h6>Yes, one can miss the payment of SIP if the fund that you have chosen provides the facility to pause the payment.</h6>
+            </div>
+            <div class="questions"> 
+                <h3>Do SIPs offer Tax Benefits?</h3>
+                <h6>Investing in SIP through ELSS (Equity Linked Savings Scheme) provides tax benefits of up to 1.5 lakh rupees per year under section 80C.</h6>
+            </div>
+            <div class="questions"> 
+                <h3>Can SIP be started online?</h3>
+                <h6>Sure! Once you've identified the funds that align with your investment objectives and risk tolerance, you can easily begin your SIP online.</h6>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script>
+    
+    // document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('form');
+        const amountInput = document.getElementById('amount');
+        const returnInput = document.getElementById('return');
+        const timeInput = document.getElementById('time');
+        const ctx = document.getElementById('futureValueChart').getContext('2d');
+        let chart = null;
+    
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            // Clear the existing chart
+            if (chart) {
+                chart.destroy();
+            }
+    
+            // Get values from form inputs
+            var amount = parseFloat(document.getElementById("amount").value);
+            var rate = parseFloat(document.getElementById("return").value) / 100;
+            var time = parseInt(document.getElementById("time").value);
+
+            var monthlyRate = rate / 12;
+            var totalMonths = time * 12;
+
+            var futureValue = amount * (((Math.pow((1 + monthlyRate), totalMonths)) - 1) / monthlyRate) * (1 + monthlyRate);
+            futureValue = Math.ceil(futureValue);
+            // Calculate investment amount
+        const investmentAmount = amount*time*12;
+
+// Calculate estimated amount
+const estimatedAmount = futureValue;
+
+// Calculate total amount
+const totalearning = estimatedAmount - investmentAmount;
+    
+            // Update HTML to display the values
+            document.getElementById('values').innerHTML = `
+            <pre><p>Investment Amount:</p>           <span>${investmentAmount}</span></pre>
+            <pre><p>Estimated Amount:</p>             <span>${estimatedAmount}</span></pre>
+            <pre><p>Total Earning:</p>                       <span>${totalearning}</span></pre>
+            `;
+    
+            // Display the future value in a donut chart
+            chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Investment Amount', 'Future Amount'],
+                    datasets: [{
+                        data: [investmentAmount, estimatedAmount],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    cutout: '50%',
+                    circumference: 360,
+                    responsive: false, // Disable responsiveness
+                }
+            });
+            
+            
+            
+        });
+    // } );
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+background-color: #ffffff;
+}
+
+/* -------------------------------------------Header------------------------------------ */
+
+#header{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo{
+    height: 50px;
+    margin-left: 50px;
+}
+#nav-bar{
+    margin-left: 680px;
+    padding: 10px 15px;
+}
+
+#nav-bar a{
+font-weight: 600;
+padding: 20px;
+text-decoration: none;
+color: #0D3B66;
+
+}
+
+.Get-Started{
+font-weight: 600;
+padding: 8px 12px;
+border-radius: 10px;
+text-decoration: none;
+color: #ffffff;
+background-color: #0D3B66;
+margin-right: 50px;
+}
+
+/* ----------------------------------------------------MAin--------------------------------------- */
+
+.headline{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    color: #0D3B66;
+}
+
+.headline h1{
+    font-family: "Roboto Slab", serif;
+    font-size:40px;
+    font-weight: 450;
+}
+
+.front{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 50px;
+}
+
+.text p{
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 16px;
+    
+}
+
+hr{
+    margin: 16px;
+    opacity: 40%;
+}
+.input{
+    margin:16px;
+    font-size:medium;
+    font-weight: 600;    
+}
+
+.input span{
+    font-size: small;
+    font-weight: 500;
+}
+
+#amount, #return, #time, #tenure, #rate{
+    display: block;
+    width: 50%;
+    height: 40px;
+    border: 1px solid #0D3B66;
+    border-radius: 8px;
+    padding: 20px;
+    font-weight: 500;
+    opacity: 70%;
+    margin-top: 5px;
+
+}
+
+#frequency{
+    display: block;
+    width: 50%;
+    height: 40px;
+    border: 1px solid #0D3B66;
+    border-radius: 8px;
+    padding: 5px 20px;
+    font-weight: 500;
+    opacity: 60%;
+    margin-top: 5px;
+}
+
+#submit{
+    font-size: large;
+    font-weight: 600;
+    background-color: #0D3B66;
+    margin: 16px;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#amount:focus, #return:focus, #time:focus{
+   border: 3px solid #0d3b6692;
+   border-radius: 10px;
+}
+
+img{
+    height: 400px;
+}
+
+.bottom{
+    padding: 50px;
+}
+
+.bottom h1{
+    font-family: "Roboto Slab", serif;
+    text-align: center;
+    margin: 50px;
+    color: #0D3B66;
+    font-weight: 450;
+}
+.questions{
+    margin: 30px;
+    text-align: justify;
+}
+.questions h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: #0D3B66;
+}
+
+.questions h6{
+    font-size: 16px;
+    font-weight: 400;
+    color: #0D3B66;
+}
+/* -------------------------------------Display Value -------------------------------- */
+
+#result{
+    display: flex;
+    width: 60%;
+    margin-left: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#values{
+    width: 50%;
+    padding: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+#values pre{
+    margin: 15px;
+    border: 3px solid #0D3B66;
+    padding: 3px 0;
+    border-radius: 5px;
+}
+#values pre p{
+    display: inline;
+    background-color:#0D3B66;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px;
+    color: white;
+}
+
+#values pre span{
+    font-weight: 700;
+    text-align: center;
+    padding: 5px;
+    color: #0D3B66;
+}
+
+/* -----------------------------------CHART------------------------------------------ */
+#futureValueChart{
+    width: 100px;
+    height: 100px;
+}

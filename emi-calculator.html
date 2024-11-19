@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    
+    <link rel="stylesheet" href="calculator-page.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div id="header">
+            <img src="/Image/Wealthfy-icon-typo-web-final-logo.png" onclick="" alt="" id="logo">
+            <nav id="nav-bar">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="">Blog</a>
+                <a href="">Contact Us</a>
+            </nav>
+            <!-- <a href="#" class="Get-Started">Get Started</a> -->
+        </div>
+    </header>
+
+    <main>
+
+        <div class="headline">
+            <h1>EMI Calculator</h1>
+        </div>
+
+        <div class="front">
+            <div class="text">
+                <p>
+                    Wish to calculate the monthly EMI of your loan? Calculate the EMI that you would pay every month to repay your loan using our EMI Calculator.
+                    <hr>
+                </p>
+
+               
+                <div id="form">
+                <form action="#">
+                    <div class="input">
+                    <label for="amount">Loan Amount</label>
+                    <input type="number" id="amount" placeholder="Ex:10000" min="100" required>
+                </div>
+                <div class="input">
+                    <label for="tenure">Loan Tenure</label>
+                    <input type="number" id="tenure" placeholder="Ex:12" min="1" max="30" required>
+                </div>
+                <div class="input">
+                    <label for="rate">Interest Rate (P.A.) </span></label>
+                    <input type="number" id="rate" placeholder="Ex:10" min="1" max="50" maxlength="50" required>
+                </div>
+                    <input type="submit" value="Plan My Future Value" id="submit">
+                </form>
+            </div>
+            <hr>
+            </div>
+           
+            <div class="img">
+                <img src="/Image/cal1.png" alt="">
+            </div>
+        </div>
+
+
+        <div id="result">
+            <div id="values"></div>
+            <canvas id="futureValueChart" width="500px" height="250px"></canvas>
+        </div>
+
+        <div class="bottom">
+            <h1>About Lumpsum Calculator
+            </h1>
+            <div class="questions">
+                <h3>What is a Lumpsum Investment?</h3>
+                <h6>Lump sum investment, also known as a one-time investment, involves investing a single amount upfront and letting it accrue compounding returns over a specified period.</h6>
+            </div>
+            <div class="questions">
+                <h3>What Is Lumpsum Calculator?</h3>
+                <h6>Using a Lumpsum Calculator, you can determine the future value of your investment. It calculates how much your investment today will grow to at a certain rate of interest. For instance, if you invest 1 lakh rupees for 60 years at a 15% interest rate, the Lumpsum Calculator predicts that your investment will reach an impressive 43.8 crore rupees after 60 years.</h6>
+            </div>
+            <div class="questions">
+                <h3> How does this Lumpsum Calculator work?</h3>
+                <h6>Our Lumpsum Calculator is designed to be user-friendly, making it accessible even to those with little financial expertise. You simply input the amount you want to invest, the number of years you plan to stay invested, and the expected annual rate of return. Once you've entered these variables, the calculator computes the future value of your investment.
+
+                    The formula utilized in our Lumpsum Calculator is: Value = Investment * (1 + Rate)^Years.</h6>
+            </div>
+            <div class="questions">
+                <h3>What is the difference between Lumpsum and SIP?</h3>
+                <h6>In lump sum investment, you invest a single amount upfront, while in SIP or Systematic Investment Plan, you invest a fixed amount at regular intervals. Market conditions greatly impact lump sum investments; if there's a significant market downturn after you invest, it might take time to recover your initial investment. However, with SIP, you don't need to time the market since investments happen regularly, both during market highs and lows. This results in a weighted average return.</h6>
+            </div>
+            <div class="questions"> 
+                <h3>Where can I park my funds for Lumpsum investment?</h3>
+                <h6>Lump sum investors have a range of options available, including Mutual Funds, Equity Shares, Exchange Traded Funds, Liquid Funds, Bonds, Fixed Deposits, and more. However, it's crucial to choose these instruments based on factors such as your risk tolerance, financial objectives, and liquidity requirements.</h6>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script  >
+        // document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('form');
+    const amountInput = document.getElementById('amount');
+    const tenureInput = document.getElementById('tenure');
+    const rateInput = document.getElementById('rate');
+    const ctx = document.getElementById('futureValueChart').getContext('2d');
+    let chart = null;
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Clear the existing chart
+        if (chart) {
+            chart.destroy();
+        }
+
+        // Get values from form inputs
+        var loanAmount = parseFloat(document.getElementById("amount").value);
+            var loanTenure = parseInt(document.getElementById("tenure").value);
+            var annualInterestRate = parseFloat(document.getElementById("rate").value) / 100;
+
+            var monthlyInterestRate = annualInterestRate / 12;
+            var totalMonths = loanTenure * 12;
+
+            var emi = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -totalMonths));
+           emi= Math.ceil(emi);
+
+        // Calculate Loan amount
+        const Amount = loanAmount;
+
+        // Calculate estimated amount
+        const monthly = emi;
+
+        // Calculate total amount
+        const interest = emi*12*loanTenure - loanAmount;
+
+        // Update HTML to display the values
+        document.getElementById('values').innerHTML = `
+        <pre><p>Loan Amount:</p>           <span>${Amount}</span></pre>
+        <pre><p>EMI:</p>                             <span>${monthly}</span></pre>
+        <pre><p>Interest:</p>                       <span>${interest}</span></pre>
+        `;
+
+        // Display the future value in a donut chart
+        chart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Loan Amount', 'Interest'],
+                datasets: [{
+                    data: [Amount, interest],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                cutout: '50%',
+                circumference: 360,
+                responsive: false, // Disable responsiveness
+            }
+        });
+        
+        
+        
+    });
+// } );
+
+    </script>
+</body>
+</html>
+

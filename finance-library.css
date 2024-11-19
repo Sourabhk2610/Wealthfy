@@ -1,0 +1,440 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: #ffffff;
+    }
+
+    /* -------------------------------------------------Header-------------------------------------------------- */
+    #header{
+        margin-top: 15px;
+        width: 100%;
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #logo{
+        height: 50px;
+        margin-left: 50px;
+    }
+    #nav-bar{
+        margin-left: 600px;
+        padding: 10px 15px;
+    }
+    
+    #nav-bar a{
+    font-weight: 600;
+    padding: 20px;
+    text-decoration: none;
+    color: #3F2E83;
+    
+    }
+    
+    .Get-Started{
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #3F2E83;
+    margin-right: 50px;
+    }
+
+    #nav-bar a:hover{
+        text-decoration: underline;
+    }
+    /* -------------------------------------------------Main--------------------------------------------------- */
+
+.headline{
+    text-align: center;
+    color: #3F2E83;
+    padding-top: 20px;
+}
+
+.headline h2{
+    font-family: "Roboto Slab", serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.headline p{
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 70%;
+}
+
+/* -------------------------------------------------Hero-Section------------------------------------------------------ */
+
+#hero-section{
+    text-align: center;
+    padding: 30PX 0PX 60PX;
+}
+
+#hero-section img{
+    width: 70%;
+    height: auto;
+    border-radius: 25px;
+    margin: auto;
+}
+
+#hero-section p{
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 50%;
+    padding-top: 10px;
+    margin: 20px;
+}
+
+#hero-section a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #3F2E83;
+    box-shadow: 5px 5px 10px #000000cd;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* ------------------------------------------------------------------------------------Features------------------------------------------------- */
+#features{
+    background-color: #3F2E83;
+    padding: 20px;
+}
+
+#features-title h2{
+    text-align: center;
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    color: white;
+}
+
+#features-title p{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    opacity: 70%;
+}
+
+#feature-box{
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.feature-box-content{
+    margin: 20px;
+    height: 350px;
+    flex-basis: 22%;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    padding:20px;
+    border: none;
+    color: white;
+
+}
+
+.feature-box-content img{
+    width: 75px;
+    padding: 5px;
+    margin: 15px 0px;
+}
+
+.feature-box-content h3{
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.feature-box-content p{
+    text-align: justify;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 80%;
+    padding: 10px;
+}
+
+/* ---------------------------------------------------------------------------Highlights------------------------------------------------------- */
+
+#highlights{
+    background-color: #cccccc67;
+    padding: 20px;
+    margin: 50px 0px;
+}
+
+#highlights-title h2{
+    text-align: center;
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    color: #3F2E83;
+}
+
+#highlights-title p{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3F2E83;
+    opacity: 70%;
+}
+
+#highlight-box{
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Course-card{
+    position: relative;
+    margin: 20px;
+    height: 400px;
+    flex-basis: 22%;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+
+.Course-card img{
+ width: 100%;
+ border-radius: 10px 10px 0px 0px;
+}
+.card-content{
+    padding: 10px 0px;
+}
+.Course-card h3{
+text-align: start;
+padding: 15px;
+}
+
+.Course-card .card-detail{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px;
+}
+
+.Course-card .card-detail h6{
+    opacity: 50%;
+    text-align: start;
+
+}
+
+.Course-card .card-detail p{
+font-size: 12px;
+font-weight: 500;
+margin-bottom: 30px;
+}
+
+.enroll{
+    position: absolute;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: #3F2E83;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    bottom: 20px;
+    right: 15px;
+}
+
+.course-btn{
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0px 0px 5px 1px #0d3b6652;
+    border-radius: 10px;
+    color: #3F2E83;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+/* -----------------------------------------------------------Video Card--------------------------------------------------------------------------- */
+
+.video-card{
+    position: relative;
+    margin: 20px;
+    height: 400px;
+    flex-basis: 22%;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+
+.video-card img{
+ width: 100%;
+ border-radius: 10px 10px 0px 0px;
+}
+.card-content{
+    padding: 10px 0px;
+}
+.video-card h3{
+text-align: start;
+padding: 15px;
+}
+
+.video-card  h6{
+    opacity: 50%;
+    text-align: start;
+    padding-left: 15px;
+
+}
+
+.video-card p{
+font-size: 12px;
+font-weight: 500;
+margin-bottom: 30px;
+padding-left: 15px;
+}
+
+.watch-now{
+    position: absolute;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: #3F2E83;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    bottom: 20px;
+    right: 15px;
+}
+
+.video-btn{
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0px 0px 5px 1px #0d3b6652;
+    border-radius: 10px;
+    color: #3F2E83;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+
+/* -------------------------------------------------------------------Article Card----------------------------------------------------------------------- */
+
+
+.article-card{
+    position: relative;
+    margin: 20px;
+    height: 400px;
+    flex-basis: 22%;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+
+.article-card img{
+ width: 100%;
+ border-radius: 10px 10px 0px 0px;
+}
+.card-content{
+    padding: 10px 0px;
+}
+.article-card h3{
+text-align: start;
+padding: 15px;
+}
+
+.article-card p{
+font-size: 12px;
+font-weight: 500;
+margin-bottom: 30px;
+padding-left: 15px;
+}
+
+.read-more{
+    position: absolute;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: #3F2E83;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    bottom: 20px;
+    right: 15px;
+}
+
+.article-btn{
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0px 0px 5px 1px #0d3b6652;
+    border-radius: 10px;
+    color: #3F2E83;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+/* ------------------------------------------------------------------------PDF card---------------------------------------------------------------------- */
+
+.pdf-card{
+    position: relative;
+    margin: 20px;
+    height: 400px;
+    flex-basis: 22%;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+
+.pdf-card img{
+ width: 100%;
+ border-radius: 10px 10px 0px 0px;
+}
+.card-content{
+    padding: 10px 0px;
+}
+.pdf-card h3{
+text-align: start;
+padding: 15px;
+}
+
+
+.pdf-card p{
+font-size: 12px;
+font-weight: 500;
+margin-bottom: 30px;
+padding: 0 15px;
+}
+
+.download-now{
+    position: absolute;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: #3F2E83;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    bottom: 20px;
+    right: 15px;
+}
+
+.document-btn{
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0px 0px 5px 1px #0d3b6652;
+    border-radius: 10px;
+    color: #3F2E83;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 15px;
+}
